@@ -2,7 +2,7 @@
 
 A full-stack personal finance management applicatiob that combines financial tracking, analytics dashboards , ML predictions , and a Gemini-powered AI assistant to help users monitor and improve financial health.
 
-# FEATURES :
+FEATURES :
    User Authentication
    Income Management
    Expense Tracking
@@ -15,7 +15,7 @@ A full-stack personal finance management applicatiob that combines financial tra
    Budget Utilization Tracking
    Monthly Insights
 
-# Tech Stack
+Tech Stack
  BACKEND:
     Java
     Spring Boot
@@ -34,11 +34,3 @@ A full-stack personal finance management applicatiob that combines financial tra
  AI
    Google Gemini API
 
-# Application Architecture:
-   Frontend
-      |
-   Spring Boot Backend
-      | ---- SQL
-      | ---- Flask ML Service
-      | ---- Gemini API
-   
