@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income</title>
+    <link rel="stylesheet" href="income.css">
+</head>
+<body>
+    <div class="container">
+
+        <!--SIDEBAR-->
+        <div class="sidebar">
+            <h2>Finance Advisor</h2>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="income.html">Income</a>
+            <a href="budgets.html">Budgets</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="ai-advisor.html">AI Advisor</a>
+            <button id="logoutBtn">🚪 Logout </button>
+        </div>
+
+
+        <!--MAIN CONTENT-->
+        <div class="main-content">
+
+            <h2>Income Management</h2>
+
+            <div class="income-summary">
+
+                <div class="summary-card total-income-card">
+                    <h3>Total Income</h3>
+                    <p id="totalIncome">Rs.0</p>
+                </div>
+
+                <div class="summary-card monthly-income-card">
+                    <h3>This Month Income</h3>
+                    <p id="monthlyIncome">Rs.0</p>
+                </div>
+
+            </div>
+
+
+            <div class="income-form">
+
+                <div class="form-group">
+                    <label for="incomeSource">Income Source</label>
+                    <select id="incomeSource">
+
+                        <option value="">Select Source</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Freelancing">Freelancing</option>
+                        <option value="Business">Business</option>
+                        <option value="Rental">Rental Income</option>
+                        <option value="Investment">Investment</option>
+                        <option value="Bonus">Bonus</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="incomeAmount">Amount</label>
+                    <input type="number" id="incomeAmount" placeholder="Enter Amount">
+                </div>
+
+                <div class="form-group">
+                    <label for="incomeDate">Income Date</label>
+                    <input type="date" id="incomeDate">
+                </div>
+
+                <button id="addIncomeBtn" type="button">
+                    Add Income
+                </button>
+
+            </div>
+
+            <div class="income-table">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="incomeTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>     
+        </div>
+    </div>
+
+        <!--EDIT POP UP-->
+    <div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Edit Income</h2>
+
+        <label>Date</label>
+        <input type="date" id="editDate">
+
+        <label>Source</label>
+        <select id="editSource">
+
+            <option value="">Select Source</option>
+            <option value="Salary">Salary</option>
+            <option value="Freelancing">Freelancing</option>
+            <option value="Business">Business</option>
+            <option value="Rental">Rental Income</option>
+            <option value="Investment">Investment</option>
+            <option value="Bonus">Bonus</option>
+            <option value="Other">Other</option>
+
+        </select>
+
+        <label>Amount</label>
+        <input type="number" id="editAmount">
+
+        <div class="modal-buttons">
+
+            <button id="updateBtn" type="button">
+                Apply Changes
+            </button>
+
+            <button id="closeBtn" type="button">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+    </div>
+    <script src="income.js"></script>
+    <script src="logout.js"></script> 
+</body>
+</html>

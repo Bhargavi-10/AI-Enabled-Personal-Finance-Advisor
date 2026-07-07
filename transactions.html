@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="transaction.css">
+</head>
+<body>
+    <div class="container">
+        <!--SIDEBAR-->
+        <div class="sidebar">
+            <h2>Finance Advisor</h2>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="income.html">Income</a>
+            <a href="budgets.html">Budgets</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="ai-advisor.html">AI Advisor</a>
+            <button id="logoutBtn">🚪 Logout </button>
+        </div>
+
+        <!--MAIN CONTENT-->
+        <div class="main-content">
+            <h1>Transactions</h1>
+
+            <!--ADD TRANSACTION FORM-->
+            <div class="transaction-form">
+                <h2>Add Transaction</h2>
+                <label>Date : </label>
+                <input type="date" id="transactionDate">
+                <label>Category : </label>
+                <input type="text" id="category" placeholder="category">
+                <label>Description : </label>
+                <input type="text" id="description" placeholder="Description">
+                <label>Amount : </label>
+                <input type="number" id="amount" placeholder="Amount">
+                <button id="addBtn">ADD TRANSACTION</button>    
+            </div>
+
+
+            <!--TRANSACTION TABLE-->
+            <div class="transaction-table">
+                <h2>All Transactions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionBody"></tbody>     
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--EDIT POP UP-->
+    <div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Edit Transaction</h2>
+
+        <label>Date</label>
+        <input type="date" id="editDate">
+
+        <label>Category</label>
+        <input type="text" id="editCategory">
+
+        <label>Description</label>
+        <input type="text" id="editDescription">
+
+        <label>Amount</label>
+        <input type="number" id="editAmount">
+
+        <div class="modal-buttons">
+
+            <button id="updateBtn">
+                Apply Changes
+            </button>
+
+            <button id="closeBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+    </div>
+    <script src="transaction.js"></script>
+    <script src="logout.js"></script> 
+</body>
+</html>

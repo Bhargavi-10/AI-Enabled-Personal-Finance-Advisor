@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!--SIDEBAR-->
+        <div class="sidebar">
+            <h2>Finance Advisor</h2>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="income.html">Income</a>
+            <a href="budgets.html">Budgets</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="ai-advisor.html">AI Advisor</a>
+            <button id="logoutBtn">🚪 Logout </button>
+        </div>
+
+        <!--MAIN CONTENT-->
+        <div class="main-content">
+            <h1>Dashboard</h1>
+            <div class="cards">
+                <div class="card expense-card">
+                    <h3>Total Expense</h3>
+                    <p id="totalExpense">Rs.0</p>
+                </div>
+                <div class="card month-card">
+                    <h3>Current Month Expense</h3>
+                    <p id="currentExpense">Rs.0</p>
+                </div>
+                <div class="card alert-card">
+                    <h3>Budget Alerts</h3>
+                    <p id="budgetAlerts">0</p>
+                </div>
+                <div class="card category-card">
+                    <h3>Top Expense Category(current Month)</h3>
+                    <p id="topCategory">-</p>
+                </div> 
+                <div class="card savings-card">
+                    <h3>Total Savings</h3>
+                    <p id="totalSavings">Rs.0</p>
+                </div>  
+                <div class="card savingsMonth-card">
+                    <h3>Current Month Savings</h3>
+                    <p id="currentMonthSavings">0</p>
+                </div>
+                <div class="card financialScore-card">
+                    <h3>Financial Score</h3>
+                    <p id="financialScore">0</p>
+                </div>
+            </div>
+
+            <div class="recent-transactions">
+                <h2>Recent Transactions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionTable">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="budget-utilization-section">
+                <h2>Budget Utilization</h2>
+                <div id="budgetUtilizationContainer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="dashboard.js"></script> 
+<script src="logout.js"></script> 
+</body>
+</html>

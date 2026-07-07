@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'segoe UI','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/*BACKGROUND*/
+body{
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a8a,
+        #2563eb,
+        #06b6d4
+    );
+
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+
+}
+
+/*ANIMATED BACKGROUND*/
+@keyframes gradientMove {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+
+}
+
+
+/*LOGIN CARD*/
+
+.loginForm{
+    width: 420px;
+    padding:40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    color: white;
+}
+
+/*HEADING*/
+.loginForm::before{
+    content: "AI Powered Finance Advisor";
+    display:block;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color:white;
+}
+
+/*FORM*/
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+/*LABELS*/
+label{
+    margin-bottom: 8px;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/*INPUTS*/
+input{
+    padding: 14px;
+    border:none;
+    outline:none;
+    border-radius: 12px;
+    background:rgba(255,255,255,0.15);
+    color:white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input::placeholder{
+    color:#d1d5db;
+}
+
+input:focus{
+    transform:scale(1.03);
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+/*BUTTON*/
+button{
+    margin-top:20px;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/*LOGIN BUTTON*/
+button:first-of-type{
+  background:#10b981;
+  color:white;
+}
+
+button:first-of-type:hover{
+    background:#059669;
+    transform:translateY(-3px);
+    box-shadow: 0 8px 20px rgba(16,185,129,0.4);
+}
+
+/*REGISTER BUTTON*/
+button:last-of-type{
+    background: #2563eb;
+    color:white;
+}
+button:last-of-type:hover{
+    background:#1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+}
