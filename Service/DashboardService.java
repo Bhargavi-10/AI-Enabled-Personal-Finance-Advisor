@@ -281,22 +281,23 @@ public class DashboardService {
         }
         Double savingsRate = ((income-expense)/income)*100;
 
-        int score = 50;
+        int score = 0;
 
-        if(savingsRate > 40){
-            score+= 40;
-        }
+        if (savingsRate <= 0) {
+        // Active overspending pulls the base score down
+           score = Math.max(0, 30 + savingsRate.intValue()); 
+        } else {
+        // Scales smoothly up to a 50% savings rate
+          score = 30 + (int) (Math.min(savingsRate, 50.0) * 0.8); 
+       }
 
-        else if(savingsRate > 20){
-            score+= 25;
-        }
-        else{
-            score+=10;
-        }
+    // 4. Controlled Budget Component (Max 30 Points)
+      int budgetAlerts = getBudgetAlertCount(userId);
+    // Deduct 5 points per alert, but cap the total penalty at 30 points
+      int budgetPenalty = Math.min(budgetAlerts * 5, 30); 
+      score += (30 - budgetPenalty);
 
-        score -= getBudgetAlertCount(userId) * 5;
-
-        return Math.max(score,0);
+      return Math.min(Math.max(score, 0), 100);
     }
 
 
